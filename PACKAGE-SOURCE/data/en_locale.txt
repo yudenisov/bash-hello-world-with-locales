@@ -1,0 +1,1 @@
+\\nHello, World!\\n\\tThis English Version of locale.\\n\\n"

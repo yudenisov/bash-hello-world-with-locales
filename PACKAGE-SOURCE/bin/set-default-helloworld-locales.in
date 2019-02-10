@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+if [ $# -ne 1 ]
+then
+	echo -e "Please Use set-default-helloword-locales.sh --help to get help"
+	exit 1
+fi
+case $1 in
+	--version )
+	-V )
+		echo -e "\nThe Package @PACKAGE@ has version @VERSION@"
+		exit 1
+		;;
+	--locale-ru )
+		echo -e "Setting Russian message locale..."
+		cp @datadir@/@PACKAGE@/ru_locale.txt @runstatedir@/@PACKAGE@/default.locale
+		exit 0
+		;;
+	--locale-en )
+		echo -e "Setting English message locale..."
+		cp @datadir@/@PACKAGE@/ru_locale.txt @runstatedir@/@PACKAGE@/default.locale
+		exit 0
+		;;
+	--help )
+	-h )
+		echo -en "USAGE:\n\tset-default-helloworld-locales.sh OPTION"
+		echo -en "\nWhere OPTION is FOLLOW:\n"
+		echo -en "\t-h --help\tOutputs this text"
+		echo -en "\t-v --version\tPrint Version Of Package"
+		echo -en "\t   --locale-ru\tSetting Russian Message Locale"
+		echo -en "\t   --locale-en\tSetting English Message Locale"
+		echo -en "\nScript Return:\n"
+		echo -en "\t0 if locale changed"
+		echo -en "\t1 if locale not changed"
+		echo -en "\nSEE ALSO: hello-word.sh\n"
+		exit 1
+		;;
+	* )
+		echo -e "Please Use set-default-helloword-locales.sh --help to get help"
+		exit 1
+		;;
+esac
