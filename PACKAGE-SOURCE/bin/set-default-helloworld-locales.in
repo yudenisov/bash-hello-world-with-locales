@@ -7,32 +7,47 @@ then
 fi
 case $1 in
 	--version )
+		echo -e "\nThe Package @PACKAGE@ has version @VERSION@"
+		exit 1
+		;;
 	-V )
 		echo -e "\nThe Package @PACKAGE@ has version @VERSION@"
 		exit 1
 		;;
 	--locale-ru )
 		echo -e "Setting Russian message locale..."
-		cp @datadir@/@PACKAGE@/ru_locale.txt @runstatedir@/@PACKAGE@/default.locale
+		cp @datadir@/@PACKAGE@/ru-locale.txt @runstatedir@/default.locale
 		exit 0
 		;;
 	--locale-en )
 		echo -e "Setting English message locale..."
-		cp @datadir@/@PACKAGE@/ru_locale.txt @runstatedir@/@PACKAGE@/default.locale
+		cp @datadir@/@PACKAGE@/en-locale.txt @runstatedir@/default.locale
 		exit 0
 		;;
 	--help )
+		echo -en "USAGE:\n\tset-default-helloworld-locales.sh OPTION"
+		echo -en "\nWhere OPTION is FOLLOW:\n"
+		echo -en "\n\t-h --help\tOutputs this text"
+		echo -en "\n\t-v --version\tPrint Version Of Package"
+		echo -en "\n\t   --locale-ru\tSetting Russian Message Locale"
+		echo -en "\n\t   --locale-en\tSetting English Message Locale"
+		echo -en "\n\nScript Return:\n"
+		echo -en "\n\t0 if locale changed"
+		echo -en "\n\t1 if locale not changed"
+		echo -en "\n\nSEE ALSO: hello-word.sh\n"
+		exit 1
+		;;
 	-h )
 		echo -en "USAGE:\n\tset-default-helloworld-locales.sh OPTION"
 		echo -en "\nWhere OPTION is FOLLOW:\n"
-		echo -en "\t-h --help\tOutputs this text"
-		echo -en "\t-v --version\tPrint Version Of Package"
-		echo -en "\t   --locale-ru\tSetting Russian Message Locale"
-		echo -en "\t   --locale-en\tSetting English Message Locale"
-		echo -en "\nScript Return:\n"
-		echo -en "\t0 if locale changed"
-		echo -en "\t1 if locale not changed"
-		echo -en "\nSEE ALSO: hello-word.sh\n"
+		echo -en "\n\t-h --help\tOutputs this text"
+		echo -en "\n\t-v --version\tPrint Version Of Package"
+		echo -en "\n\t   --locale-ru\tSetting Russian Message Locale"
+		echo -en "\n\t   --locale-en\tSetting English Message Locale"
+		echo -en "\n\nScript Return:\n"
+		echo -en "\n\t0 if locale changed"
+		echo -en "\n\t1 if locale not changed"
+		echo -en "\n\nSEE ALSO: hello-word.sh\n"
 		exit 1
 		;;
 	* )

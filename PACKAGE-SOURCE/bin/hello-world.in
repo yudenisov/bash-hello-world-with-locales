@@ -7,5 +7,5 @@ else
  echo -e "\nUSAGE:\n\thello-word.sh\n\twithout parameters"
 fi
 #
-read HELLO_WORD < @runstatedir@/@PACKAGE@/default.locale
+read HELLO_WORD < @runstatedir@/default.locale
 echo -e $HELLO_WORD
